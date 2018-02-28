@@ -21,10 +21,11 @@ app.get('/movieInfo', (req, res) => {
   const apiKey = "383b36"
   axios.get(`http://www.omdbapi.com/?apikey=${apiKey}&t=${title}`)
     .then((response) => {
-      console.log(response);
+      const poster = response.data.Poster;
+      res.send({poster});
     })
     .catch((response) => {
-      console.log(response);
+      res.send({});
     })
 })
 
