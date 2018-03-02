@@ -11,7 +11,7 @@ app.set('view engine', path.join('hbs'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
-  res.render('index.hbs')
+  res.render('index.hbs');
 })
 
 
@@ -29,5 +29,5 @@ app.get('/movieInfo', (req, res) => {
 })
 
 app.listen("3000", () =>{
-  console.log("listeing on port 300");
+  console.log("listening on port 3000");
 })
