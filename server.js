@@ -30,5 +30,5 @@ app.get('/movieInfo', (req, res) => {
 })
 
 app.listen("3000", () =>{
-  console.log("listeing on port 300");
+  console.log("Active on port 300");
 })
