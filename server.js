@@ -18,7 +18,8 @@ app.get('/', (req, res) => {
 
 app.get('/movieInfo', (req, res) => {
   const title = req.query.title;
-  const apiKey = "383b36"
+  const apiKey = process.env.API_KEY
+  console.log(apiKey);
   axios.get(`http://www.omdbapi.com/?apikey=${apiKey}&t=${title}`)
     .then((response) => {
       const poster = response.data.Poster;
@@ -30,5 +31,5 @@ app.get('/movieInfo', (req, res) => {
 })
 
 app.listen("3000", () =>{
-  console.log("Active on port 300");
+  console.log("Active on port 3000");
 })
