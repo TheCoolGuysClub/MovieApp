@@ -3,6 +3,7 @@ const hbs = require('hbs');
 const path = require('path');
 const axios = require('axios');
 
+const port = process.env.PORT || 3000;
 const app = express();
 
 app.set('views', path.join(__dirname, "views"));
@@ -25,13 +26,14 @@ app.get('/movieInfo', (req, res) => {
       const poster = response.data.Poster;
       const director = response.data.Director;
       const actors = response.data.Actors;
-      res.send({poster, director, actors});
+      const dvd = response.data.DVD;
+      res.send({poster, director, actors, dvd});
     })
     .catch((response) => {
       res.send({});
     })
 })
 
-app.listen("3000", () =>{
+app.listen(process.env.PORT, () =>{
   console.log("Active on port 3000");
 })

@@ -4,6 +4,7 @@ $(document).ready(function() {
   const errorMessage = $('#error-message');
   const director = $(`#director`);
  const actors = $(`#actors`);
+ const dvd = $('#dvd')
   titleInput.on('keyup', function(e) {
     if(e.key === 'Enter') {
       const movieTitle = titleInput.val();
@@ -12,9 +13,11 @@ $(document).ready(function() {
         if (response.poster) {
           errorMessage.addClass('hidden');
           director.removeClass('hidden');
-          director.text(`${response.director}`);
+          director.text(`Director: ${response.director}`);
           actors.removeClass('hidden');
-          actors.text(`This is played by ${response.actors}`)
+          actors.text(`Actors are ${response.actors}`)
+          dvd.removeClass('hidden');
+          dvd.text(`Release date is ${response.dvd}`);
           poster.removeClass('hidden');
           poster.attr('src', response.poster);
         } else {
@@ -23,9 +26,10 @@ $(document).ready(function() {
           poster.addClass('hidden');
           director.addClass('hidden');
           actors.addClass('hidden');
+          dvd.addClass('hidden');
 
         }
-        
+
       })
       // window.location.replace('/movie');
     }
