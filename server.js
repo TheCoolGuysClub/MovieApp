@@ -22,8 +22,10 @@ app.get('/movieInfo', (req, res) => {
   console.log(apiKey);
   axios.get(`http://www.omdbapi.com/?apikey=${apiKey}&t=${title}`)
     .then((response) => {
-      const poster = response.data.Poster;
-      res.send({poster});
+      const poster = resp onse.data.Poster;
+      const director = response.data.Director;
+      const actors = response.data.Actors;
+      res.send({poster, director, actors});
     })
     .catch((response) => {
       res.send({});
