@@ -5,3 +5,7 @@
 html {
   font-family: helvetica;
 }
+
+#error-message {
+  color: red;
+}
