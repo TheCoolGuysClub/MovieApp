@@ -1,16 +1,11 @@
-html {
-  font-family: helvetica;
-
-}
-
 .hidden {
   display: none;
 }
 
-#error-message {
-  color: red;
+html {
+  font-family: helvetica;
 }
 
-.alert {
-  color: green;
+#error-message {
+  color: red;
 }

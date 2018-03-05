@@ -11,15 +11,15 @@ app.set('view engine', path.join('hbs'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
-  res.render('index.hbs')
+  res.render('index.hbs');
 })
 
 
 
 app.get('/movieInfo', (req, res) => {
   const title = req.query.title;
-  const apiKey = process.env.API_KEY
-  console.log(apiKey);
+  // const apiKey = process.env.API_KEY
+  const apiKey = "383b36";
   axios.get(`http://www.omdbapi.com/?apikey=${apiKey}&t=${title}`)
     .then((response) => {
       const poster = resp onse.data.Poster;
